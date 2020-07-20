@@ -48,7 +48,7 @@ showSelected();
 function showSelected() {
   $('select').change(function () {
     let selected = $(this).val();
-    $(`main > *:not(.${selected})`).hide();
+    $('section').hide();
     $(`.${selected}`).show();
   });
 }
