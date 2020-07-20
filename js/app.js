@@ -18,12 +18,14 @@ $.get('data/page-1.json', function (data) {
     let newImage = new ImageObj(e.image_url, e.keyword, e.title);
     newImage.render();
   });
+  $('#photo-template').hide();
   createOptions(optionsArr);
 });
 
 // function to render the images
 ImageObj.prototype.render = function () {
-  let imageTemplate = $('#photo-template').clone().attr('class', this.keyword);
+  let imageTemplate = $('#photo-template').clone().removeAttr('id');
+  imageTemplate.attr('class', this.keyword);
   imageTemplate.find('h2').text(this.keyword);
   imageTemplate.find('img').attr('src', this.image_url);
   imageTemplate.find('p').text(this.title);
