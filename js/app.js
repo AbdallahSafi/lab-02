@@ -3,11 +3,13 @@
 
 // Creating constructor for images objects
 var imageArr = [];
+var optionsArr = [];
 function ImageObj(image_url, keyword, title) {
   this.image_url = image_url;
   this.keyword = keyword;
   this.title = title;
   imageArr.push(this);
+  optionsArr.push(keyword);
 }
 
 // Get that data form json file and create new instance
@@ -16,13 +18,12 @@ $.get('data/page-1.json', function (data) {
     let newImage = new ImageObj(e.image_url, e.keyword, e.title);
     newImage.render();
   });
-  removeTemplate();
+  createOptions(optionsArr);
 });
 
 // function to render the images
 ImageObj.prototype.render = function () {
-  console.log(this);
-  let imageTemplate = $('#photo-template').clone().attr('id', this.keyword);
+  let imageTemplate = $('#photo-template').clone().attr('class', this.keyword);
   imageTemplate.find('h2').text(this.keyword);
   imageTemplate.find('img').attr('src', this.image_url);
   imageTemplate.find('p').text(this.title);
@@ -30,6 +31,24 @@ ImageObj.prototype.render = function () {
 };
 
 //removing the template section
-function removeTemplate() {
-  $('#photo-template').remove();
+// function removeTemplate() {
+//   $('#photo-template').remove();
+// }
+
+// creating options for select input
+function createOptions(arr) {
+  let uniqueOptionsArr = [...new Set(arr)];
+  uniqueOptionsArr.forEach((e) => {
+    $('select').append(`<option value="${e}">${e}</option>`);
+  });
+}
+
+//Show selected images
+showSelected();
+function showSelected() {
+  $('select').change(function () {
+    let selected = $(this).val();
+    $(`main > *:not(.${selected})`).hide();
+    $(`.${selected}`).show();
+  });
 }
