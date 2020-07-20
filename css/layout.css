@@ -6,5 +6,26 @@ header {
     rgba(241, 39, 17, 1) 100%
   );
   width: 100%;
-  height: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+footer {
+  clear: left;
+  background-color: #f12711;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
 }
