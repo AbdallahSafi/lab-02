@@ -87,7 +87,9 @@ $('#page2').click(choosePage(2));
 function choosePage(num) {
   return function () {
     imageArr = [];
+    optionsArr = [];
     $('main > *:not(#photo-template)').fadeOut(300, function() { $(this).remove(); })
+    $('option').not(':first').remove();
     page = num;
     getDataAndRender(page);
   };
