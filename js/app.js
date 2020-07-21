@@ -29,12 +29,9 @@ function getDataAndRender(page) {
 
 // function to render the images
 ImageObj.prototype.render = function () {
-  let imageTemplate = $('#photo-template').clone().removeAttr('id style');
-  imageTemplate.attr('class', this.keyword);
-  imageTemplate.find('h2').text(this.keyword);
-  imageTemplate.find('img').attr('src', this.image_url);
-  imageTemplate.find('p').text(this.title);
-  imageTemplate.appendTo('main');
+  let template = $('#imageTemplate').html();
+  let objRendered = Mustache.render(template,this);
+  $('main').append(objRendered);
 };
 
 // creating options for select input

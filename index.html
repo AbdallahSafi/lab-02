@@ -13,6 +13,14 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+    <script id="imageTemplate" type="text/x-mustach-template">
+      <section class={{keyword}}>
+        <h2>{{keyword}}</h2>
+        <img src="{{image_url}}" alt="">
+        <p>{{title}}</p>
+      </section>
+    </script>
   </head>
   <body>
     <header>
@@ -29,11 +37,11 @@
       </div>
     </header>
     <main>
-      <section id="photo-template">
+      <!-- <section id="photo-template">
         <h2></h2>
         <img src="" alt="" />
         <p></p>
-      </section>
+      </section> -->
     </main>
     <footer>
       &copy; 2018 Code Fellows
