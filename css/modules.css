@@ -49,6 +49,9 @@ section {
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #fff;
+  width: 300px;
+
+
 }
 
 section:hover {
@@ -65,8 +68,13 @@ section p,
 h2 {
   padding: 15px;
   text-align: center;
+  
 }
 
 section p {
   font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
+ 
 }
