@@ -14,14 +14,14 @@ header {
 }
 
 main {
+  display: flex;
+  flex-wrap: wrap;
   max-width: 960px;
   margin: 0 auto;
   padding: 40px 0;
-  overflow: hidden;
 }
 
 footer {
-  clear: left;
   background-color: #f12711;
   padding-top: 15px;
   padding-bottom: 15px;

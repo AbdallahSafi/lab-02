@@ -34,8 +34,19 @@ button {
   margin: 4px 2px;
   cursor: pointer;
 }
+button:first-child,button:nth-child(2)  {
+  background-color: #fff;
+  color: #333;
+}
+button:first-child:hover,button:nth-child(2):hover  {
+  background-color: rgb(233, 232, 232);
+  color: #333;
+}
+
+
 button:hover {
   background-color: #fabe3c;
+ 
 }
 button:focus {
   outline: none;
@@ -43,7 +54,6 @@ button:focus {
 
 section {
   margin: 10px;
-  float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
