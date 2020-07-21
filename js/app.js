@@ -32,10 +32,6 @@ ImageObj.prototype.render = function () {
   imageTemplate.appendTo('main');
 };
 
-//removing the template section
-// function removeTemplate() {
-//   $('#photo-template').remove();
-// }
 
 // creating options for select input
 function createOptions(arr) {
